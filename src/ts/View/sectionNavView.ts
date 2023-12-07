@@ -13,7 +13,8 @@ class sectionNavView {
     const short = this._shortScreen.matches;
 
     const observerHide = new IntersectionObserver(
-      () => {
+      (entry) => {
+        if (!entry[0].isIntersecting) return;
         this._nav!.classList.add("-translate-y-full");
       },
       {
@@ -24,7 +25,8 @@ class sectionNavView {
     );
 
     const observerShow = new IntersectionObserver(
-      () => {
+      (entry) => {
+        if (!entry[0].isIntersecting) return;
         this._currSectionHL?.classList.add("translate-x-0");
         this._currSectionHL?.classList.remove("translate-x-full");
         this._currSectionHL?.classList.remove("translate-x-[200%]");
@@ -39,7 +41,8 @@ class sectionNavView {
     );
 
     const observerProjects = new IntersectionObserver(
-      () => {
+      (entry) => {
+        if (!entry[0].isIntersecting) return;
         this._nav!.classList.remove("-translate-y-full");
         7;
         this._currSectionHL?.classList.add("translate-x-full");
@@ -57,7 +60,8 @@ class sectionNavView {
     );
 
     const observerContactMe = new IntersectionObserver(
-      () => {
+      (entry) => {
+        if (!entry[0].isIntersecting) return;
         this._nav!.classList.remove("-translate-y-full");
         this._currSectionHL?.classList.add("translate-x-[200%]");
         this._currSectionHL?.classList.remove("translate-x-full");

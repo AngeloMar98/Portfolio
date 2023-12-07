@@ -12,15 +12,19 @@ class sectionNavView {
     }
     _changeObserver() {
         const short = this._shortScreen.matches;
-        const observerHide = new IntersectionObserver(() => {
+        const observerHide = new IntersectionObserver((entry) => {
+            if (!entry[0].isIntersecting)
+                return;
             this._nav.classList.add("-translate-y-full");
         }, {
             root: null,
             threshold: 0.7,
             rootMargin: "50px",
         });
-        const observerShow = new IntersectionObserver(() => {
+        const observerShow = new IntersectionObserver((entry) => {
             var _a, _b, _c;
+            if (!entry[0].isIntersecting)
+                return;
             (_a = this._currSectionHL) === null || _a === void 0 ? void 0 : _a.classList.add("translate-x-0");
             (_b = this._currSectionHL) === null || _b === void 0 ? void 0 : _b.classList.remove("translate-x-full");
             (_c = this._currSectionHL) === null || _c === void 0 ? void 0 : _c.classList.remove("translate-x-[200%]");
@@ -30,8 +34,10 @@ class sectionNavView {
             threshold: short ? 0.6 : 1,
             rootMargin: "50px",
         });
-        const observerProjects = new IntersectionObserver(() => {
+        const observerProjects = new IntersectionObserver((entry) => {
             var _a, _b, _c, _d, _e;
+            if (!entry[0].isIntersecting)
+                return;
             this._nav.classList.remove("-translate-y-full");
             7;
             (_a = this._currSectionHL) === null || _a === void 0 ? void 0 : _a.classList.add("translate-x-full");
@@ -44,8 +50,10 @@ class sectionNavView {
             /* PROJECTS IS SHORT FOR NOW, SHOULD BE LONGER. PRONE TO CHANGE THIS VALUE */
             threshold: short ? 0.6 : 1,
         });
-        const observerContactMe = new IntersectionObserver(() => {
+        const observerContactMe = new IntersectionObserver((entry) => {
             var _a, _b, _c, _d, _e;
+            if (!entry[0].isIntersecting)
+                return;
             this._nav.classList.remove("-translate-y-full");
             (_a = this._currSectionHL) === null || _a === void 0 ? void 0 : _a.classList.add("translate-x-[200%]");
             (_b = this._currSectionHL) === null || _b === void 0 ? void 0 : _b.classList.remove("translate-x-full");
