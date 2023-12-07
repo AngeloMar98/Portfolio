@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="dist/output.css" rel="stylesheet" />
+
+    <script defer type="module" src="dist/js/controller.js"></script>
+  </head>
+  <body class="font-default dark:bg-black">
+    <nav
+      class="section-nav flex transition-transform duration-200 -translate-y-full fixed top-0 left-0 right-0 w-full z-50 bg-lightM-darkOrange text-lightM-white dark:bg-darkM-gray dark:text-darkM-white justify-center font-bold"
+    >
+      <ul
+        class="nav-inner grid grid-cols-3 justify-around w-full max-w-[600px] relative text-center"
+      >
+        <li
+          class="currSectionHL h-full bg-lightM-blue dark:bg-black absolute w-1/3 -z-10 transition-all duration-150 translate-x-0"
+        ></li>
+        <li class="py-1">
+          <button
+            tabindex="2"
+            type="button"
+            aria-label="Go to section Technologies"
+            data-eng="Technologies"
+            data-ita="Tecnologie"
+            data-section="technologies"
+          >
+            Technologies
+          </button>
+        </li>
+        <li class="py-1">
+          <button
+            tabindex="3"
+            type="button"
+            aria-label="Go to section Projects"
+            data-eng="Projects"
+            data-ita="Progetti"
+            data-section="projects"
+          >
+            Projects
+          </button>
+        </li>
+        <li class="py-1">
+          <button
+            tabindex="4"
+            type="button"
+            aria-label="Go to section Contact me"
+            data-eng="Contact me"
+            data-ita="Contattami"
+            data-section="contactme"
+          >
+            Contact me
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <button
+      aria-label="toggle language change"
+      data-currlang="eng"
+      type="button"
+      class="h-[50px] w-[10px] rounded-full bg-lightM-blue dark:bg-white fixed bottom-6 right-6 z-10 toggleLanguage group"
+    >
+      <div class="relative h-full">
+        <img
+          alt="english language on"
+          src="./src/assets/img/UI_icons/uk.svg"
+          class="max-w-[40px] absolute bottom-[-12px] group-data-[currlang=ita]:bottom-[24px] left-0 -translate-x-[38%] transition-all duration-250"
+        />
+      </div>
+    </button>
+    <button
+      aria-label="Toggle site theme"
+      type="button"
+      class="toggleTheme bg-lightM-orange dark:bg-white fill-lightM-blue rounded-full p-1 theme-toggle-shadow transition-all duration-150 fixed right-7 z-10 bottom-24 translate-x-1/2"
+    >
+      <svg
+        class="block dark:hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M240,152H199.55a73.54,73.54,0,0,0,.45-8,72,72,0,0,0-144,0,73.54,73.54,0,0,0,.45,8H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM72,144a56,56,0,1,1,111.41,8H72.59A56.13,56.13,0,0,1,72,144Zm144,56a8,8,0,0,1-8,8H48a8,8,0,0,1,0-16H208A8,8,0,0,1,216,200ZM72.84,43.58a8,8,0,0,1,14.32-7.16l8,16a8,8,0,0,1-14.32,7.16Zm-56,48.84a8,8,0,0,1,10.74-3.57l16,8a8,8,0,0,1-7.16,14.31l-16-8A8,8,0,0,1,16.84,92.42Zm192,15.16a8,8,0,0,1,3.58-10.73l16-8a8,8,0,1,1,7.16,14.31l-16,8a8,8,0,0,1-10.74-3.58Zm-48-55.16,8-16a8,8,0,0,1,14.32,7.16l-8,16a8,8,0,1,1-14.32-7.16Z"
+        ></path>
+      </svg>
+
+      <svg
+        class="hidden dark:block"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"
+        ></path>
+      </svg>
+    </button>
+    <header
+      class="bg-[url('../src/assets/img/lightMobile.png')] bigTablet:bg-[url('../src/assets/img/lightDesktop.jpg')] dark:bg-[url('../src/assets/img/darkMobile.png')] dark:bigTablet:bg-[url('../src/assets/img/darkDesktop.jpg')] bg-cover bg-bottom h-screen bigTablet:h-[100vh] relative text-lightM-white dark:text-darkM-white"
+    >
+      <div
+        id="aboutMeContainer"
+        class="w-full h-full header-inner relative flex items-center justify-center transition-all duration-300"
+      >
+        <div
+          class="p-3 text-center group flex flex-col items-center bigTablet:gap-8 bigTablet:text-xl"
+        >
+          <h1>
+            <span data-eng="Hi, I'm" data-ita="Ciao, sono">Hi, I'm</span>
+
+            <span
+              class="group-hover:dark:text-black group-hover:text-lightM-blue transition-colors duration-300"
+              >Angelo</span
+            >
+          </h1>
+
+          <button
+            type="button"
+            tabindex="1"
+            class="aboutme_btn rounded-full py-1 px-3 text-center bg-lightM-blue dark:bg-black hover:cursor mt-3 max-w-[120px]"
+          >
+            About me
+          </button>
+          <p
+            id="aboutMe"
+            class="p-3 transition-all duration-150 opacity-0 max-w-[600px] mx-auto text-white drop-shadow leading-[1.4rem]"
+            data-lang="eng"
+          >
+            <span
+              data-ita="Sono uno studente di sviluppo web, la cosa che ha accesso il mio
+            interesse in questo campo è stata un'invidia bruciante per gli
+            sviluppatori più abili che costruivano il proprio sito web dei sogni
+            con una UI pulita e idee acute alle spalle. Il mio obiettivo finale
+            è costruire quel tipo di siti web, usando lo sviluppo web come
+            strumento per dare alle mie idee una forma (utile e) tangibile."
+              data-eng="I'm a web development student, what sparked my interest in this
+            field was a burning envy for better developers building their own
+            dream web site with clean UI and neat ideas behind. My end goal is making
+            that kind of web sites, using web development as instrument to give
+            my ideas a (useful) tangible form."
+            >
+              Sono uno studente di sviluppo web, la cosa che ha accesso il mio
+              interesse in questo campo è stata un'invidia bruciante per gli
+              sviluppatori più abili che costruivano il proprio sito web dei
+              sogni con una UI pulita e idee acute alle spalle. Il mio obiettivo
+              finale è costruire quel tipo di siti web, usando lo sviluppo web
+              come strumento per dare alle mie idee una forma (utile e)
+              tangibile.
+            </span>
+            <br />
+            <span
+              data-ita="Sono competente con HTML, CSS, Tailwind, Javascript, Typescript ma sto ancora mirando ad ottenere qualsiasi quantità di esperienza di giorno in giorno."
+              data-eng="I'm proficient with HTML, CSS, Tailwind, Javscript, Typescript, but
+            still looking to get any kind of experience on the daily."
+            >
+              Sono competente con HTML, CSS, Tailwind, Javascript, Typescript ma
+              sto ancora mirando ad ottenere qualsiasi tipo di esperienza di
+              giorno in giorno.
+            </span>
+          </p>
+        </div>
+        <button
+          id="goToSections"
+          class="rounded-full p-1 absolute bottom-6 dark:fill-darkM-black dark:bg-white bg-lightM-orange fill-lightM-white dark:fill-black goSectionsBtn"
+          type="button"
+          aria-label="Go to sections"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section
+        id="technologies"
+        class="text-lightM-nero py-12 dark:text-white bg-gradientLight dark:bg-black p-6"
+      >
+        <h2
+          class="text-center py-3"
+          data-eng="Technologies"
+          data-ita="Tecnologie"
+        >
+          Technologies
+        </h2>
+        <div
+          class="grid techn-grid max-w-[680px] bigTablet:mx-auto mx-5 rounded-sm bg-lightM-white p-3 dark:bg-darkM-gray gap-x-6 justify-evenly"
+        >
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="HTML logo"
+            >
+              <path
+                fill="#E44D26"
+                d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"
+              />
+              <path
+                fill="#F16529"
+                d="M64 116.8l36.378-10.086 8.559-95.878H64z"
+              />
+              <path
+                fill="#EBEBEB"
+                d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"
+              />
+              <path
+                fill="#fff"
+                d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"
+              />
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg tracking-wider"
+              >HTML</span
+            >
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="CSS logo"
+            >
+              <path
+                fill="#1572B6"
+                d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"
+              />
+              <path
+                fill="#33A9DC"
+                d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z"
+              />
+              <path
+                fill="#fff"
+                d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z"
+              />
+              <path
+                fill="#EBEBEB"
+                d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z"
+              />
+              <path
+                fill="#fff"
+                d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z"
+              />
+              <path
+                fill="#EBEBEB"
+                d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z"
+              />
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg tracking-wider"
+              >CSS</span
+            >
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="Tailwind logo"
+            >
+              <path
+                d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
+                fill="#38b2ac"
+              />
+            </svg>
+            <div class="font-semibold text-base tablet:text-lg">Tailwind</div>
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="Javascript logo"
+            >
+              <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z" />
+              <path
+                fill="#323330"
+                d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"
+              />
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg"
+              >Javascript</span
+            >
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+            aria-label="Typescript logo"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="Typescript logo"
+            >
+              <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
+              <path
+                data-name="original"
+                fill="#007acc"
+                d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23 23 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73L82 101l3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49.19 49.19 0 01.12-5.17C29.08 59 39 59 51 59h21.83z"
+              />
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg"
+              >Typescript</span
+            >
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="VS code logo"
+            >
+              <path
+                d="M3.656 45.043s-3.027-2.191.61-5.113l8.468-7.594s2.426-2.559 4.989-.328l78.175 59.328v28.45s-.039 4.468-5.757 3.976zm0 0"
+                fill="#2489ca"
+              />
+              <path
+                d="M23.809 63.379L3.656 81.742s-2.07 1.543 0 4.305l9.356 8.527s2.222 2.395 5.508-.328l21.359-16.238zm0 0"
+                fill="#1070b3"
+              />
+              <path
+                d="M59.184 63.531l36.953-28.285-.239-28.297S94.32.773 89.055 3.99L39.879 48.851zm0 0"
+                fill="#0877b9"
+              />
+              <path
+                d="M90.14 123.797c2.145 2.203 4.747 1.48 4.747 1.48l28.797-14.222c3.687-2.52 3.171-5.645 3.171-5.645V20.465c0-3.735-3.812-5.024-3.812-5.024L98.082 3.38c-5.453-3.379-9.027.61-9.027.61s4.593-3.317 6.843 2.96v112.317c0 .773-.164 1.53-.492 2.214-.656 1.332-2.086 2.57-5.504 2.051zm0 0"
+                fill="#3c99d4"
+              />
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg"
+              >VS&nbsp;Code</span
+            >
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="Github logo"
+            >
+              <g fill="#181616">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                />
+                <path
+                  d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                />
+              </g>
+            </svg>
+            <span class="font-semibold text-base tablet:text-lg">Github</span>
+          </div>
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="Git logo"
+            >
+              <path
+                fill="#F34F29"
+                d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314a9.66 9.66 0 012.293 9.993L87.42 55.529c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.578 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.779 3.777 3.779 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-4.088-9.905-.311-13.683.934-.933 1.855-1.638 2.855-2.11V47.333c-1-.472-1.92-1.172-2.856-2.111-2.861-2.86-3.396-7.06-1.928-10.576L40.983 20.333 3.229 58.123c-3.175 3.177-3.155 8.325.02 11.5l55.126 55.114c3.173 3.174 8.325 3.174 11.503 0l54.86-54.858c3.175-3.176 3.178-8.327.004-11.501z"
+              />
+            </svg>
+
+            <span class="font-semibold text-base tablet:text-lg">Git</span>
+          </div>
+
+          <div
+            class="text-center flex flex-col items-center justify-center p-4 rounded-sm"
+          >
+            <svg
+              class="custom-shadow w-[50px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 128 128"
+              aria-label="NPM logo"
+            >
+              <path
+                fill="#cb3837"
+                d="M2 38.5h124v43.71H64v7.29H36.44v-7.29H2zm6.89 36.43h13.78V53.07h6.89v21.86h6.89V45.79H8.89zm34.44-29.14v36.42h13.78v-7.28h13.78V45.79zm13.78 7.29H64v14.56h-6.89zm20.67-7.29v29.14h13.78V53.07h6.89v21.86h6.89V53.07h6.89v21.86h6.89V45.79z"
+              />
+            </svg>
+
+            <span class="font-semibold text-base tablet:text-lg">NPM</span>
+          </div>
+        </div>
+      </section>
+      <section
+        id="projects"
+        class="text-lightM-nero dark:text-white [&:not(.dark)]:bg-gradientLight2 dark:bg-black p-6 py-12"
+      >
+        <h2 class="text-center py-3" data-eng="Projects" data-ita="Progetti">
+          Projects
+        </h2>
+        <div class="grid projects-grid gap-4 justify-around p-3">
+          <article
+            class="inline-block rounded-sm max-w-[350px] laptop:max-w-[500px] laptop:-translate-x-1/3 group relative laptop:mx-auto"
+          >
+            <div
+              class="absolute w-full h-full transition-none duration-0 bg-purple rounded-md"
+            ></div>
+            <div
+              class="relative overflow-hidden border rounded-md text-white bg-lightM-blue border-lightM-nero dark:bg-darkM-gray dark:border-darkM-lighterGray group-hover:-translate-y-[10px] group-hover:translate-x-[10px] transition-all duration-200"
+            >
+              <a
+                href="https://github.com/AngeloMar98/Pokemon-Team-Builder"
+                target="_blank"
+              >
+                <div class="img-container overflow-hidden relative group">
+                  <!-- group-hover:cursor-pointer group-hover:gray-filter group-hover:scale-125 -->
+                  <img
+                    alt="Pokèmon time builder site preview"
+                    class="transition-all duration-300"
+                    src="./src/assets/img/Projects preview/pokemonBuilder.png"
+                  />
+
+                  <svg
+                    class="custom-shadow w-[30px] absolute bottom-2 left-2 transition-colors duration-200 fill-[#181616] group-hover:fill-cyan-400 group-hover:custom-shadow-cyan"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 128 128"
+                  >
+                    <g>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      />
+                      <path
+                        d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <h3 class="pl-2 py-2 laptop:hidden">Pokèmon Team Builder</h3>
+                <p
+                  class="px-2 pb-4 my-auto laptop:hidden text-base"
+                  data-ita="Un Team Builder di Pokèmon, cerca qualsiasi pokèmon, costruisci il tuo team con un moveset personalizzato, vedi le statistiche e salva quella build."
+                  data-eng="A Pokèmon Team Builder, search up any pokèmon and build your
+                team with its own moveset, see the statistics and save the
+                build."
+                >
+                  A Pokèmon Team Builder, search up any pokèmon and build your
+                  team with its own moveset, see the statistics and save the
+                  build.
+                </p>
+              </a>
+            </div>
+            <div
+              class="p-4 dark:bg-darkM-gray border-darkM-gray hidden laptop:w-[300px] laptop:block laptop:absolute laptop:right-[20px] laptop:bottom-[42%] laptop:translate-x-full laptop:translate-y-1/2 relative border dark:border-darkM-lighterGray rounded-md text-white bg-lightM-blue"
+            >
+              <h3
+                class="text-right bg-transparent absolute top-0 right-0 pb-2 -translate-y-full"
+              >
+                Pokèmon Team builder
+              </h3>
+              <p
+                data-ita="Un Team Builder di Pokèmon, cerca qualsiasi pokèmon, costruisci il tuo team con un moveset personalizzato, vedi le statistiche e salva quella build."
+                data-eng="A Pokèmon Team Builder, search up any pokèmon and build your
+                team with its own moveset, see the statistics and save the
+                build."
+              >
+                A Pokèmon Team Builder, search up any pokèmon and build your
+                team with its own moveset, see the statistics and save the
+                build.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        id="contactme"
+        class="text-lightM-nero dark:text-white [&:not(.dark)]:bg-gradientLight3 p-6 dark:bg-black pb-20"
+      >
+        <h2
+          class="text-center py-3"
+          data-eng="Contact me"
+          data-ita="Contattami"
+        >
+          Contact me
+        </h2>
+
+        <form
+          name="Send email"
+          action="https://formspree.io/f/xdorqeoe"
+          method="POST"
+          class="grid grid-cols-1 items-center max-w-[400px] desktop:max-w-[800px] desktop:grid-cols-2 mx-auto gap-x-6"
+        >
+          <div class="mb-2 order-1">
+            <input
+              tabindex="5"
+              id="form-name"
+              required
+              name="name"
+              class="w-full bg-transparent dark:bg-black dark:text-white border-b border-white"
+              type="text"
+            />
+            <label for="form-name" class="font-bold text-sm tracking-wider"
+              >NAME</label
+            >
+          </div>
+          <div class="mb-2 order-2">
+            <input
+              tabindex="6"
+              id="form-email"
+              required
+              name="email"
+              class="w-full bg-transparent dark:bg-black dark:text-white border-b border-white"
+              type="email"
+            />
+            <label for="form-email" class="font-bold text-sm tracking-wider"
+              >EMAIL</label
+            >
+          </div>
+          <div class="mb-4 order-3">
+            <input
+              tabindex="7"
+              id="form-company"
+              required
+              name="company"
+              class="w-full bg-transparent dark:bg-black dark:text-white border-b border-white"
+              type="text"
+            />
+            <label for="form-company" class="font-bold text-sm tracking-wider"
+              >COMPANY</label
+            >
+          </div>
+          <div class="order-4 desktop:order-1 row-span-3">
+            <textarea
+              tabindex="8"
+              required
+              name="text"
+              id="form-message"
+              class="w-full h-[200px] mb-2 dark:bg-black dark:text-white border dark:border-white p-2 resize-none"
+            >
+            </textarea>
+            <label for="form-message" class="text-sm tracking-wider hidden"
+              >EMAIL</label
+            >
+          </div>
+          <input
+            tabindex="9"
+            class="px-4 py-1 border dark:border-white rounded-full mx-auto hover:cursor-pointer dark:bg-black transition-colors duration-200 bg-white hover:bg-lightM-blue hover:text-white hover:dark:bg-white hover:dark:text-black order-5 desktop:col-span-2"
+            type="submit"
+            value="Send"
+          />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

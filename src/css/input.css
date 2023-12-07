@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply font-extrabold;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-3xl mb-6;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+}
+
+@layer components {
+  #goToSections {
+    animation: fluctuate 900ms infinite alternate ease-in-out;
+  }
+
+  .header-shadow {
+    background: linear-gradient(to top, #121212e5, transparent 90%);
+  }
+
+  html:not(.dark) .bg-gradientLight {
+    background: linear-gradient(to top, #ff7e17, #ff5e3a);
+  }
+
+  html:not(.dark) .bg-gradientLight2 {
+    background: linear-gradient(to bottom, #ff7e17, #ffa55d);
+  }
+
+  html:not(.dark) .bg-gradientLight3 {
+    background: linear-gradient(to bottom, #ffa55d, #ff5e3a);
+  }
+
+  .custom-shadow {
+    filter: drop-shadow(0 0 13px #ffffffb5);
+  }
+
+  .theme-toggle-shadow {
+    box-shadow: 0 0 24px 2px #000;
+  }
+
+  .custom-shadow-cyan {
+    filter: drop-shadow(0 0 13px #22d3ee8a);
+  }
+
+  .dark .custom-shadow {
+    filter: drop-shadow(0 0 13px #000000b5);
+  }
+
+  .gray-filter {
+    filter: grayscale(0.4);
+  }
+
+  .techn-grid {
+    grid-template-columns: repeat(auto-fill, 65px);
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(200px, 300px);
+  }
+
+  @keyframes fluctuate {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(0.3rem);
+    }
+  }
+
+  @keyframes moveHightlightRight {
+    from {
+      transform: inherit;
+    }
+    to {
+      transform: translateX(33%);
+    }
+  }
+
+  @media screen and (min-width: 31.8em) {
+    .techn-grid {
+      grid-template-columns: repeat(auto-fill, 75px);
+    }
+  }
+
+  @media screen and (min-width: 36.25em) {
+    .projects-grid {
+      grid-template-columns: minmax(200px, 300px) minmax(200px, 300px);
+    }
+  }
+
+  @media screen and (min-width: 55em) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
