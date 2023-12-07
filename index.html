@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-
+    <link rel="icon" type="image/x-icon" href="/src/assets/img/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -81,7 +81,7 @@
     <button
       aria-label="Toggle site theme"
       type="button"
-      class="toggleTheme bg-lightM-orange dark:bg-white fill-lightM-blue rounded-full p-1 theme-toggle-shadow transition-all duration-150 fixed right-7 z-10 bottom-24 translate-x-1/2"
+      class="toggleTheme bg-lightM-orange dark:bg-white dark:fill-black fill-lightM-blue rounded-full p-1 theme-toggle-shadow transition-all duration-150 fixed right-7 z-10 bottom-24 translate-x-1/2"
     >
       <svg
         class="block dark:hidden"
@@ -116,7 +116,7 @@
         class="w-full h-full header-inner relative flex items-center justify-center transition-all duration-300"
       >
         <div
-          class="p-3 text-center group flex flex-col items-center bigTablet:gap-8 bigTablet:text-xl"
+          class="p-3 text-center group flex flex-col items-center tall:gap-8 tall:text-xl"
         >
           <h1>
             <span data-eng="Hi, I'm" data-ita="Ciao, sono">Hi, I'm</span>
@@ -143,7 +143,7 @@
               data-ita="Sono uno studente di sviluppo web, la cosa che ha accesso il mio
             interesse in questo campo è stata un'invidia bruciante per gli
             sviluppatori più abili che costruivano il proprio sito web dei sogni
-            con una UI pulita e idee acute alle spalle. Il mio obiettivo finale
+            con una UI pulita e idee acute dietro. Il mio obiettivo finale
             è costruire quel tipo di siti web, usando lo sviluppo web come
             strumento per dare alle mie idee una forma (utile e) tangibile."
               data-eng="I'm a web development student, what sparked my interest in this
@@ -155,19 +155,19 @@
               Sono uno studente di sviluppo web, la cosa che ha accesso il mio
               interesse in questo campo è stata un'invidia bruciante per gli
               sviluppatori più abili che costruivano il proprio sito web dei
-              sogni con una UI pulita e idee acute alle spalle. Il mio obiettivo
+              sogni con una UI pulita e idee acute dietro. Il mio obiettivo
               finale è costruire quel tipo di siti web, usando lo sviluppo web
               come strumento per dare alle mie idee una forma (utile e)
               tangibile.
             </span>
             <br />
             <span
-              data-ita="Sono competente con HTML, CSS, Tailwind, Javascript, Typescript ma sto ancora mirando ad ottenere qualsiasi quantità di esperienza di giorno in giorno."
+              data-ita="Sono competente con HTML, CSS, Tailwind, Javascript, Typescript, ma sto ancora mirando ad ottenere qualsiasi quantità di esperienza di giorno in giorno."
               data-eng="I'm proficient with HTML, CSS, Tailwind, Javscript, Typescript, but
             still looking to get any kind of experience on the daily."
             >
-              Sono competente con HTML, CSS, Tailwind, Javascript, Typescript ma
-              sto ancora mirando ad ottenere qualsiasi tipo di esperienza di
+              Sono competente con HTML, CSS, Tailwind, Javascript, Typescript,
+              ma sto ancora mirando ad ottenere qualsiasi tipo di esperienza di
               giorno in giorno.
             </span>
           </p>
@@ -528,7 +528,11 @@
               class="w-full bg-transparent dark:bg-black dark:text-white border-b border-white"
               type="text"
             />
-            <label for="form-name" class="font-bold text-sm tracking-wider"
+            <label
+              for="form-name"
+              class="font-bold text-sm tracking-wider"
+              data-eng="NAME"
+              data-ita="NOME"
               >NAME</label
             >
           </div>
@@ -554,7 +558,11 @@
               class="w-full bg-transparent dark:bg-black dark:text-white border-b border-white"
               type="text"
             />
-            <label for="form-company" class="font-bold text-sm tracking-wider"
+            <label
+              for="form-company"
+              class="font-bold text-sm tracking-wider"
+              data-eng="COMPANY"
+              data-ita="AZIENDA"
               >COMPANY</label
             >
           </div>
@@ -567,8 +575,12 @@
               class="w-full h-[200px] mb-2 dark:bg-black dark:text-white border dark:border-white p-2 resize-none"
             >
             </textarea>
-            <label for="form-message" class="text-sm tracking-wider hidden"
-              >EMAIL</label
+            <label
+              for="form-message"
+              class="text-sm tracking-wider hidden"
+              data-eng="MESSAGE"
+              data-ita="MESSAGGIO"
+              >Message</label
             >
           </div>
           <input

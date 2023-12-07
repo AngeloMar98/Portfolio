@@ -38,6 +38,7 @@ module.exports = {
       bigTablet: "740px",
       laptop: "880px",
       desktop: "1080px",
+      tall: { raw: "(min-height: 550px)" },
     },
   },
   safelist: ["translate-x-full", "translate-x-[200%]", "header-shadow"],

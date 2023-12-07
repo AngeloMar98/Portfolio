@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -561,7 +561,7 @@ h3 {
 }
 
 .header-shadow {
-  background: linear-gradient(to top, #121212e5, transparent 90%);
+  background: linear-gradient(to top, #000, transparent 90%);
 }
 
 html:not(.dark) .bg-gradientLight {
@@ -1389,5 +1389,16 @@ html:not(.dark) .\[\&\:not\(\.dark\)\]\:bg-gradientLight3:not(.dark) {
 
   .desktop\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-height: 550px) {
+  .tall\:gap-8 {
+    gap: 2rem;
+  }
+
+  .tall\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }

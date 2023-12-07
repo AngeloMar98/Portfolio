@@ -27,7 +27,7 @@
   }
 
   .header-shadow {
-    background: linear-gradient(to top, #121212e5, transparent 90%);
+    background: linear-gradient(to top, #000, transparent 90%);
   }
 
   html:not(.dark) .bg-gradientLight {
